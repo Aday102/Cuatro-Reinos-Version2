@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f8ddd18f6edf5419337f09c9235744, type: 3}
   m_Name: Grifo
   m_EditorClassIdentifier: Assembly-CSharp::NewScriptableObjectScript
-  nombre: 
-  tier: 0
-  rol: 
-  rasgo: 
-  vida: 0
-  ataque: 0
-  armadura: 0
-  resistenciaMagica: 0
-  movimiento: 
-  habilidad: 
-  trasElCombate: 
+  nombre: Grifo Real
+  tier: 3
+  rol: Asesino
+  rasgo: Alado
+  vida: 680
+  ataque: 85
+  armadura: 26
+  resistenciaMagica: 26
+  movimiento: "R\xE1pido"
+  habilidad: "Zarpazo: salta a la retaguardia enemiga y hace 400 de da\xF1o."
+  trasElCombate: Drenaje 1

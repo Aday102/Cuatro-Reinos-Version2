@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f8ddd18f6edf5419337f09c9235744, type: 3}
   m_Name: "Arc\xE1ngel"
   m_EditorClassIdentifier: Assembly-CSharp::NewScriptableObjectScript
-  nombre: 
-  tier: 0
-  rol: 
-  rasgo: 
-  vida: 0
-  ataque: 0
-  armadura: 0
-  resistenciaMagica: 0
-  movimiento: 
-  habilidad: 
-  trasElCombate: 
+  nombre: "Arc\xE1ngel"
+  tier: 4
+  rol: Mago
+  rasgo: Alado
+  vida: 680
+  ataque: 70
+  armadura: 24
+  resistenciaMagica: 34
+  movimiento: Normal
+  habilidad: "Resurrecci\xF3n: revive una pila aliada ca\xEDda con 30 % de vida."
+  trasElCombate: Inspirar

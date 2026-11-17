@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f8ddd18f6edf5419337f09c9235744, type: 3}
   m_Name: "Cl\xE9rigo"
   m_EditorClassIdentifier: Assembly-CSharp::NewScriptableObjectScript
-  nombre: 
-  tier: 0
-  rol: 
-  rasgo: 
-  vida: 0
-  ataque: 0
-  armadura: 0
-  resistenciaMagica: 0
-  movimiento: 
-  habilidad: 
-  trasElCombate: 
+  nombre: "Cl\xE9rigo de Campo"
+  tier: 2
+  rol: Mago
+  rasgo: Linaje
+  vida: 455
+  ataque: 50
+  armadura: 18
+  resistenciaMagica: 28
+  movimiento: Lento
+  habilidad: "Luz sagrada: 300 de da\xF1o m\xE1gico y cura igual a un aliado."
+  trasElCombate: Crecer 1

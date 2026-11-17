@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewScriptableObjectScript", menuName = "Scriptable Objects/NewScriptableObjectScript")]
-public class NewScriptableObjectScript : ScriptableObject
+[CreateAssetMenu(fileName = "NewScriptableObjectScript", menuName = "Scriptable Objects/DatosUnidades")]
+public class DatosUnidades : ScriptableObject
 {
     public string nombre;
     public int tier;

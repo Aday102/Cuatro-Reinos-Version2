@@ -1,11 +1,11 @@
 using UnityEngine;
-
-public class Enemigo : MonoBehaviour
+public class Unidad : MonoBehaviour
 {
     public DatosUnidades datos;
-
-    public Enemigo objetivo;
-
+    public Unidad enemigo;
+    public float velocidad;
+    public float distanciaAtaque;
+    public float velAtaque;
     private string nombre;
     private int tier;
     private string rol;
@@ -17,65 +17,62 @@ public class Enemigo : MonoBehaviour
     private string movimiento;
     private string habilidad;
     private string trasElCombate;
-
+    private float tiempoDesdeElUltimoAtaque;
     private bool muerto = false;
 
-    void Awake()
+    void Start()
     {
         nombre = datos.nombre;
-        tier = datos.tier;
-        rol = datos.rol;
-        rasgo = datos.rasgo;
         vidaActual = datos.vida;
         ataque = datos.ataque;
         armadura = datos.armadura;
-        resistenciaMagica = datos.resistenciaMagica;
-        movimiento = datos.movimiento;
-        habilidad = datos.habilidad;
-        trasElCombate = datos.trasElCombate;
+    }
+    void Update()
+    {
+        if (muerto || enemigo == null)
+        {
+            return;
+        }
+        float distancia = Vector3.Distance(transform.position, enemigo.transform.position);
+
+        if (distancia > distanciaAtaque)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, enemigo.transform.position, velocidad * Time.deltaTime);
+        }
+        else
+        {
+            tiempoDesdeElUltimoAtaque += Time.deltaTime;
+            if (tiempoDesdeElUltimoAtaque >= velAtaque)
+            {
+                Atacar();
+                tiempoDesdeElUltimoAtaque = 0; 
+            }
+        }
     }
 
     public void Atacar()
     {
-        int danio = ataque - objetivo.armadura;
-
-        if (danio < 0)
+        int danio = ataque - enemigo.armadura;
+        if (danio < 1)
         {
-            danio = 0;
+            danio = 1;
         }
-
-        Debug.Log(nombre + " ataca a " + objetivo.nombre + " y le hace " + danio + " de daño.");
-
-        objetivo.RecibirDanio(danio);
+        Debug.Log(nombre + " ataca a " + enemigo.nombre + " y le quita " + danio);
+        enemigo.RecibirDanio(danio);
     }
-
-    public void RecibirDanio(int danio)
+    public void RecibirDanio(int cantidad)
     {
-        vidaActual = vidaActual - danio;
-
+        vidaActual -= cantidad;
         if (vidaActual <= 0)
         {
             vidaActual = 0;
             muerto = true;
-
-            Debug.Log(nombre + " ha muerto.");
+            Debug.Log(nombre + " ha muerto");
+            Destroy(gameObject);
         }
         else
         {
-            Debug.Log(nombre + " tiene " + vidaActual + " de vida.");
-        }
-    }
-
-    public void Combatir()
-    {
-        while (!muerto && !objetivo.muerto)
-        {
-            Atacar();
-
-            if (!objetivo.muerto)
-            {
-                objetivo.Atacar();
-            }
+            Debug.Log(nombre + " tiene " + vidaActual + " de vida");
         }
     }
 }

@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Cuatro-Reinos-Version2.slnx",
+    "dotnet.defaultSolution": "Cuatro Reinos.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
